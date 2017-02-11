@@ -33,7 +33,7 @@ module.exports = {
     self._uploadsThumbsPath = path.resolve(ROOTPATH, appconfig.paths.data, 'thumbs')
 
     // Disable Sharp cache, as it cause file locks issues when deleting uploads.
-    sharp.cache(false)
+    // sharp.cache(false)//TODO: remove this
 
     return self
   },
