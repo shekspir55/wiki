@@ -8,7 +8,7 @@ const fileType = require('file-type')
 const mime = require('mime-types')
 const md5 = require('md5')
 const chokidar = require('chokidar')
-const sharp = require('sharp')
+// const sharp = require('sharp')
 const _ = require('lodash')
 
 /**
