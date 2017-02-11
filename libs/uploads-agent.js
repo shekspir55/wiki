@@ -6,7 +6,7 @@ const fs = Promise.promisifyAll(require('fs-extra'))
 const readChunk = require('read-chunk')
 const fileType = require('file-type')
 const mime = require('mime-types')
-const farmhash = require('farmhash')
+const md5 = require('md5')
 const chokidar = require('chokidar')
 const sharp = require('sharp')
 const _ = require('lodash')
@@ -162,7 +162,7 @@ module.exports = {
     let fldPath = path.join(self._uploadsPath, fldName)
     let fPath = path.join(fldPath, f)
     let fPathObj = path.parse(fPath)
-    let fUid = farmhash.fingerprint32(fldName + '/' + f)
+    let fUid = md5(fldName + '/' + f)
 
     return fs.statAsync(fPath).then((s) => {
       if (!s.isFile()) { return false }
